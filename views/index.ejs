@@ -1,0 +1,78 @@
+<%- include('./header')  %>
+<div class="container">
+    <h1 class="text-center crud-h">Crud Operation
+    </h1>
+    <div class="col-md-6 m-auto">
+        <hr>
+
+        <div class="d-flex justify-content-around">
+
+            <div class="text-center">
+                <i class="fa fa-user-plus fa-3x crud-icon"  aria-hidden="true"></i>
+                <span>Create</span>
+            </div>
+            <div class="text-center">
+                <i class="fab fa-readme fa-3x crud-icon"></i>
+                <span>Read</span>
+            </div>
+            <div class="text-center">
+                <i class="fas fa-user-edit fa-3x crud-icon"></i>
+                <span>Update</span>
+            </div>
+            <div class="text-center">
+                <i class="far fa-trash-alt fa-3x crud-icon"></i>
+                <span>Delete</span>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-8 m-auto">
+            <form action="/search" method="POST">
+                <input type="text" name="searchTitle" class="form-control my-2" placeholder="Search by full title">
+                <button class="btn btn-success w-100">Search <i class="fa fa-search" aria-hidden="true"></i></button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-8 m-auto">
+            <form action="/handleForm" method="POST" class="form" enctype="multipart/form-data">
+                <input type="text" name="title" class="form-control" placeholder="Enter Title">
+                <input type="file" name="img" class="form-control my-4">
+                <input type="text" name="desc" class="form-control my-4" placeholder="Enter desc">
+                <button class="btn btn-info w-100">Add <i class="fa fa-user-plus" aria-hidden="true"></i></button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="row">
+        <% for( let index = 0; index < data.length; index++ ) { %>
+        <div class="col-md-4 mt-4">
+            <div class="card-deck">
+                <div class="card">
+                    <a href="/readMore/<%= data[index]._id  %> "> <img src="<%= data[index].imgURL  %>"
+                            class="card-img-top" alt="..."></a>
+                    <div class="card-body">
+                        <h5 class="card-title"><%= data[index].title%></h5>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted"><%= data[index].date  %></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% } %>
+    </div>
+</div>
+
+<%- include('./footer')  %>

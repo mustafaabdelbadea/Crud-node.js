@@ -1,0 +1,19 @@
+.crud-icon{
+    position: absolute;
+    color:#7be;
+}
+span{
+    position: relative;
+    top:3em;
+    left: 0;
+    right: 0;
+    color: #999;
+}
+
+.crud-h{
+    color: #999;
+}
+.img-size{
+    width: 200px;
+    height: 200px;
+}

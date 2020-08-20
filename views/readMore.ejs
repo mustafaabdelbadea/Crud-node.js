@@ -1,0 +1,33 @@
+<%- include('./header')  %>
+
+
+
+<div class="container my-5">
+  <div class="row">
+      <div class="col-md-8 m-auto">
+          <form  action="/edit-photo/<%= dataImg._id  %> " method="POST" class="form"  enctype="multipart/form-data">
+            <label>
+              <img src="../<%= dataImg.imgURL%> " class="img-fluid img-size"  alt="">
+              <input type="file" name="img" style="display:none" class="form-control my-4">
+            </label>
+              <input type="text" value="<%= dataImg.title  %> " name="title" class="form-control" placeholder="Enter Title">
+              <input type="text" value="<%= dataImg.desc  %> " name="desc" class="form-control my-4" placeholder="Enter desc">
+              <button class="btn btn-info w-100">Update</button>
+          </form >
+      </div>
+  </div>
+</div>
+
+<div class="card mb-3">
+  <div class="col-md-8 m-auto">
+      <img  src="..\<%= dataImg.imgURL  %>" class="img-fluid " alt="">
+    <div class="card-body">
+      <h2 class="card-title"><%= dataImg.title  %> </h2>
+      <h4 class="card-text"><%= dataImg.desc %> </h4>
+      <p class="card-text"><%= dataImg.date  %> </p>
+      <a href="/delete/<%= dataImg._id%>" class="btn btn-danger">Delete</a>
+    </div></div>
+  
+  </div>
+
+  <%- include('./footer')  %> 

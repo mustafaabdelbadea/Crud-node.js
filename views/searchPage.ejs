@@ -1,0 +1,25 @@
+<%- include('./header')  %> 
+<div class="container">
+  <div class="row">
+<% for( let index = 0; index < searchData.length; index++ ) { %>
+<div class="col-md-4 mt-4">
+         <div class="card-deck">
+  <div class="card">
+    <a href="/readMore/<%= searchData[index]._id  %> "> <img src="<%= searchData[index].imgURL  %>" class="card-img-top" alt="..."></a>
+    <div class="card-body">
+      <h5 class="card-title"><%= searchData[index].title%></h5>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted"><%= searchData[index].date  %></small>
+    </div>
+  </div>
+</div>
+      </div>
+<% } %>
+  </div>
+</div>
+
+
+
+
+<%- include('./footer')  %> 
