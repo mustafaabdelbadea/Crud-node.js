@@ -3,12 +3,10 @@ const app=express();
 const bodyParser=require('body-parser').urlencoded({extended:false})
 const path=require('path');
 const mongoose=require('mongoose');
-
 app.set('view engine','ejs');
 app.use(express.static(path.join(__dirname,'assets')));
 app.use('/images',express.static(path.join(__dirname,'images')));
 app.use(bodyParser);
-
 const IndexRouter=require('./routes/index.routes');
 const multer = require('multer');
 var storage=multer.diskStorage({
