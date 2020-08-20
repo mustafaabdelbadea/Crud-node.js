@@ -33,7 +33,7 @@ function fileFilter (req, file, cb) {
 
 app.use(multer({dest:'images',storage,fileFilter}).single('img'));
 app.use(IndexRouter);
-mongoose.connect("mongodb://localhost:27017/uploadDB", { useNewUrlParser: true , useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://crud:cruD11@cluster0.23ygs.mongodb.net/uploadDB", { useNewUrlParser: true , useUnifiedTopology: true });
 app.listen(process.env.PORT||3000,()=>{
     console.log('server is running now......')
 })
